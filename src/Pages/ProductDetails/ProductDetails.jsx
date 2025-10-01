@@ -4,6 +4,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../context/Cart.context";
 import Card from "../../Components/Card/Card";
+import toast from "react-hot-toast";
 
 export default function ProductDetails() {
   const [productDetails, setProductDetails] = useState(null);
@@ -20,7 +21,7 @@ export default function ProductDetails() {
       let { data } = await axios.request(options);
       setProductDetails(data.data);
     } catch (error) {
-      console.log(error);
+      toast.error("Something went wrong. Please try again.");
     }
   }
 
@@ -33,7 +34,8 @@ export default function ProductDetails() {
       let { data } = await axios.request(options);
       setRelatedProducts(data.data);
     } catch (error) {
-      console.log(error);
+      toast.error("Something went wrong. Please try again.");
+
     }
   }
 

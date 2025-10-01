@@ -4,6 +4,7 @@ import { jwtDecode } from "jwt-decode";
 import Loading from "../../Components/Loading/Loading";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 export default function Orders() {
   const [orders, setOrders] = useState(null);
@@ -25,7 +26,7 @@ export default function Orders() {
       let { data } = await axios.request(options);
       setOrders(data);
     } catch (error) {
-      console.log(error);
+      toast.error("Something went wrong. Please try again.");
     }
   }
 

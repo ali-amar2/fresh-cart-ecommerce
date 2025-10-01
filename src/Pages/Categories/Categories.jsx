@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Loading from "../../Components/Loading/Loading";
+import toast from "react-hot-toast";
 
 export default function Categories() {
   const [categories, setCategories] = useState(null);
@@ -14,7 +15,8 @@ export default function Categories() {
       let data = await axios.request(options);
       setCategories(data.data.data);
     } catch (error) {
-      console.log(error);
+      toast.error("Something went wrong. Please try again.");
+
     }
   }
 

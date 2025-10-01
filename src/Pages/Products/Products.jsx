@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Loading from "../../Components/Loading/Loading";
 import Card from "../../Components/Card/Card";
+import toast from "react-hot-toast";
 
 export default function Products() {
   const [products, setProducts] = useState(null);
@@ -14,7 +15,7 @@ export default function Products() {
       let data = await axios.request(options);
       setProducts(data.data.data);
     } catch (error) {
-      console.log(error);
+      toast.error("Something went wrong. Please try again.");
     }
   }
   useEffect(() => {

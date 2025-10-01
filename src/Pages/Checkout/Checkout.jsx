@@ -39,6 +39,7 @@ export default function Checkout() {
   }
 
   async function handleOnlinePayment(values) {
+    let toastId;
     try {
       const options = {
         url: `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartInfo.cartId}?url=${location.origin}`,
@@ -48,16 +49,20 @@ export default function Checkout() {
         },
         data: values,
       };
+
       let { data } = await axios.request(options);
       if (data.status === "success") {
-        toast.loading("Redirecting you to Stripe ...");
+        toastId = toast.loading("Redirecting you to Stripe ...");
+
         setTimeout(() => {
+          toast.dismiss(toastId);
           location.href = data.session.url;
-        }, 2000);
+        }, 1500);
       }
-      console.log(data);
     } catch (error) {
-      console.log(error);
+      toast.error("Something went wrong. Please try again.");
+
+      if (toastId) toast.dismiss(toastId);
     }
   }
 
