@@ -36,6 +36,19 @@ export default function Orders() {
 
   if (!orders) return <Loading />;
 
+  if (orders.length === 0) {
+    return (
+      <div className="text-center py-10">
+        <h2 className="text-xl font-semibold text-gray-600">
+          You don’t have any orders yet.
+        </h2>
+        <p className="text-gray-500 mt-2">
+          Start shopping now and your orders will appear here.
+        </p>
+      </div>
+    );
+  }
+
   return (
     <section className="space-y-4">
       {orders.map((order) => (
