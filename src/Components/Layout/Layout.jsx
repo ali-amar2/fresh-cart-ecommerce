@@ -6,7 +6,7 @@ export default function Layout() {
   return (
     <>
       <Navbar />
-      <div className="container pb-10 pt-24 text-[clamp(0.95rem,1vw+1rem,1.25rem)]px-[max(1rem,2vw)] min-h-[calc(100vh-120px)] box-border">
+      <div className="container px-4 md:px-2 pb-10 pt-24 text-[clamp(0.95rem,1vw+1rem,1.25rem)]px-[max(1rem,2vw)] min-h-[calc(100vh-120px)] box-border">
         <Outlet />
       </div>
       <Footer />

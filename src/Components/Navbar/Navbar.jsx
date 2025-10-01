@@ -17,7 +17,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="bg-slate-100 h-15 shadow-sm py-3 fixed top-0 left-0 right-0 z-50 text-base sm:text-lg md:text-xl">
-        <div className="container bg-slate-100 relative flex items-center justify-between px-4 sm:px-8 md:px-12">
+        <div className="container bg-slate-100 relative flex items-center justify-between px-4 ">
           {/* Logo */}
           <Link to="/" aria-label="FreshCart Home">
             <img src={FreshCartLogo} alt="FreshCart brand logo" className="h-8 md:h-10 max-w-[150px] object-contain" />
