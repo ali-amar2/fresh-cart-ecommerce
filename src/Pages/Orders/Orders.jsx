@@ -13,7 +13,7 @@ export default function Orders() {
   let id = "";
   try {
     id = jwtDecode(token).id;
-  } catch (err) {
+  } catch (error) {
     console.error("Invalid token");
   }
 
@@ -26,7 +26,8 @@ export default function Orders() {
       let { data } = await axios.request(options);
       setOrders(data);
     } catch (error) {
-      toast.error("Something went wrong. Please try again.");
+      console.log(error);
+
     }
   }
 

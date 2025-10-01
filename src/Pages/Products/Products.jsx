@@ -15,7 +15,8 @@ export default function Products() {
       let data = await axios.request(options);
       setProducts(data.data.data);
     } catch (error) {
-      toast.error("Something went wrong. Please try again.");
+      console.log(error);
+
     }
   }
   useEffect(() => {

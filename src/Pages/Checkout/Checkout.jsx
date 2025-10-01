@@ -60,8 +60,6 @@ export default function Checkout() {
         }, 1500);
       }
     } catch (error) {
-      toast.error("Something went wrong. Please try again.");
-
       if (toastId) toast.dismiss(toastId);
     }
   }

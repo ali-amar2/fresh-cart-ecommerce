@@ -21,7 +21,8 @@ export default function ProductDetails() {
       let { data } = await axios.request(options);
       setProductDetails(data.data);
     } catch (error) {
-      toast.error("Something went wrong. Please try again.");
+      console.log(error);
+
     }
   }
 
@@ -34,7 +35,8 @@ export default function ProductDetails() {
       let { data } = await axios.request(options);
       setRelatedProducts(data.data);
     } catch (error) {
-      toast.error("Something went wrong. Please try again.");
+      console.log(error);
+
 
     }
   }

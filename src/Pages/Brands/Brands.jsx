@@ -15,7 +15,7 @@ export default function Brands() {
       let data = await axios.request(options);
       setBrands(data.data.data);
     } catch (error) {
-      toast.error("Something went wrong. Please try again.");
+      console.log(error);
     }
   }
 

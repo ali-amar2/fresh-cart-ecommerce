@@ -29,8 +29,7 @@ export default function CartProvider({ children }) {
             }
 
         } catch (error) {
-            toast.error("Something went wrong. Please try again.");
-
+            console.log(error);
         } finally {
             toast.dismiss(toastId)
         }
@@ -51,7 +50,7 @@ export default function CartProvider({ children }) {
             setCartInfo(data)
 
         } catch (error) {
-            toast.error("Something went wrong. Please try again.");
+            console.log(error);
         }
     }
 
@@ -73,7 +72,8 @@ export default function CartProvider({ children }) {
             }
 
         } catch (error) {
-            toast.error("Something went wrong. Please try again.");
+            console.log(error);
+
         }
         finally {
             toast.dismiss(toastId)
@@ -100,7 +100,7 @@ export default function CartProvider({ children }) {
                 });
             }
         } catch (error) {
-            toast.error("Something went wrong. Please try again.");
+            console.log(error);
         }
         finally {
             toast.dismiss(toastId)
@@ -127,8 +127,7 @@ export default function CartProvider({ children }) {
             }
 
         } catch (error) {
-            toast.error("Something went wrong. Please try again.");
-
+            console.log(error);
         }
     }
 
